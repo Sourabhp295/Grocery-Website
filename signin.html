@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>   
+<head>
+<style>
+th, td {
+ border: 5px black;
+}
+th, td {
+padding: 20px;
+text-align: center;
+background-color: green ;
+color: white;
+}
+</style>
+ <script >
+ function validate() {
+ if( document.myForm.Name.value == "" ) {
+ alert( "Please enter your name!" );
+ document.myForm.Name.focus() ;
+ return false;
+ }
+  if( document.myForm.Email.value == "" ) {
+ alert( "Please enter your Email!" );
+ document.myForm.Email.focus() ;
+ return false;
+ }
+if( document.myForm.Zip.value == "" || isNaN( document.myForm.Zip.value ) ||
+  document.myForm.Zip.value.length != 6 ) {
+alert( "Please provide a zip in number format." );
+ document.myForm.Zip.focus() ;
+return false;
+  }
+ if( document.myForm.phone.value == "" || isNaN( document.myForm.phone.value ) ||
+  document.myForm.phone.value.length != 10 ) {
+ alert( "Please enter correct phone number. Please do not include country code" );
+ document.myForm.phone.focus() ;
+ return false;
+ }
+ if( document.myForm.pwd.value == "" ) {
+ alert( "Please enter correct password which should be greater than 5 digits " );
+ document.myForm.pwd.focus() ;
+ return false;
+ }
+if( document.myForm.pwd1.value == "" ) {
+ alert( "Please enter correct password which should be greater than 5 digits " );
+ document.myForm.pwd1.focus() ;
+ return false;
+ }
+if( document.myForm.pwd.value != document.myForm.pwd1.value){
+   alert ("Password did not match.Enter again")
+  return false;
+   }
+return( true );
+ }
+ </script>      
+ </head>
+
+
+ <body>
+<center>
+<h2><b><u>Sign In</u></b></h2>
+<p>*************************************************************************************************</p>
+
+ <form name = "myForm" onsubmit = "return(validate());">
+  <table border = "3"> 
+  <tr>
+<td align = "center">Name</td>
+  <td><input type = "text" name = "Name" ></td>
+</tr>
+  <tr>
+   <td align = "center">Email</td>
+ <td><input type = "text" name = "Email"></td>
+ </tr>
+ <tr>
+ <td align = "center">Pin Code</td>
+ <td><input type = "text" name = "Zip"></td>
+</tr>
+ <tr>
+ <td align = "center">Phone No.</td>
+ <td><input type = "text" name = "phone"></td>
+</tr>
+ <tr>
+ <td align = "center">Password</td>
+ <td><input type = "password" name="pwd"></td>
+</tr>
+ <tr>
+ <td align = "center">Confirm Password</td>
+ <td><input type = "password" name="pwd1"></td>
+</tr>
+<tr>
+ <td align = "center"></td>
+ <td><input type = "submit" value = "Submit" /></td>
+ </tr>
+ </table>
+ </form> <br>
+  <a href="index.html">
+<button>Go To Home</button>
+</a>
+ </body>
+</html>
+
+
+
+
+
